@@ -26,7 +26,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void UserCreateSuccessful()
         {
-            var content = File.ReadAllText("../../Fixtures/user_create.json");
+            var content = File.ReadAllText("../../../Fixtures/user_create.json");
             var client = GetMockClient(content);
             var repo = new UserRepository(client.Object);
             var id = "608ef7e7-6113-4981-a3a3-ab8cea04eb93";
@@ -62,7 +62,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ValidationErrorUserCreateMissedId()
         {
-            var content = File.ReadAllText("../../Fixtures/user_create.json");
+            var content = File.ReadAllText("../../../Fixtures/user_create.json");
             var client = GetMockClient(content);
             var repo = new UserRepository(client.Object);
             var id = "608ef7e7-6113-4981-a3a3-ab8cea04eb93";
@@ -84,7 +84,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ValidationErrorUserCreateMissedFirstName()
         {
-            var content = File.ReadAllText("../../Fixtures/user_create.json");
+            var content = File.ReadAllText("../../../Fixtures/user_create.json");
             var client = GetMockClient(content);
             var repo = new UserRepository(client.Object);
             var id = "608ef7e7-6113-4981-a3a3-ab8cea04eb93";
@@ -106,7 +106,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ValidationErrorUserCreateWrongCountry()
         {
-            var content = File.ReadAllText("../../Fixtures/user_create.json");
+            var content = File.ReadAllText("../../../Fixtures/user_create.json");
             var client = GetMockClient(content);
             var repo = new UserRepository(client.Object);
             var id = "608ef7e7-6113-4981-a3a3-ab8cea04eb93";
@@ -128,7 +128,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ValidationErrorUserCreateWrongEmail()
         {
-            var content = File.ReadAllText("../../Fixtures/user_create.json");
+            var content = File.ReadAllText("../../../Fixtures/user_create.json");
             var client = GetMockClient(content);
             var repo = new UserRepository(client.Object);
             var id = "608ef7e7-6113-4981-a3a3-ab8cea04eb93";
@@ -152,7 +152,7 @@ namespace AssemblyPaymentsDotNet.Tests
         {
             //var id = "ec9bf096-c505-4bef-87f6-18822b9dbf2c";
             //Then, list users
-            var content = File.ReadAllText("../../Fixtures/users_list.json");
+            var content = File.ReadAllText("../../../Fixtures/users_list.json");
             var client = GetMockClient(content);
             var repo = new UserRepository(client.Object);
 
@@ -165,7 +165,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ListUsersNegativeParams()
         {
-            var content = File.ReadAllText("../../Fixtures/users_list.json");
+            var content = File.ReadAllText("../../../Fixtures/users_list.json");
             var client = GetMockClient(content);
             var repo = new UserRepository(client.Object);
             Assert.Throws<ArgumentException>(() => repo.ListUsers(-10, -20));
@@ -174,7 +174,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ListUsersTooHighLimit()
         {
-            var content = File.ReadAllText("../../Fixtures/users_list.json");
+            var content = File.ReadAllText("../../../Fixtures/users_list.json");
             var client = GetMockClient(content);
             var repo = new UserRepository(client.Object);
             Assert.Throws<ArgumentException>(() => repo.ListUsers(201));
@@ -185,7 +185,7 @@ namespace AssemblyPaymentsDotNet.Tests
         public void GetUserSuccessful()
         {
             //First, create a user with known id
-            var content = File.ReadAllText("../../Fixtures/user_create.json");
+            var content = File.ReadAllText("../../../Fixtures/user_create.json");
             var client = GetMockClient(content);
             var repo = new UserRepository(client.Object);
             var id = "608ef7e7-6113-4981-a3a3-ab8cea04eb93";
@@ -201,7 +201,7 @@ namespace AssemblyPaymentsDotNet.Tests
         //That's bad idea not to distinguish between "wrong login/password" and "There is no such ID in DB"
         public void GetUserMissingId()
         {
-            var content = File.ReadAllText("../../Fixtures/user_missing.json");
+            var content = File.ReadAllText("../../../Fixtures/user_missing.json");
             var client = GetMockClient(content, (System.Net.HttpStatusCode)422);
             var repo = new UserRepository(client.Object);
             var id = "asdfkjas;lkflaksndflaksndfklas";
@@ -220,7 +220,7 @@ namespace AssemblyPaymentsDotNet.Tests
         //That's bad idea not to distinguish between "wrong login/password" and "There is no such ID in DB"
         public void DeleteUserMissingId()
         {
-            var content = File.ReadAllText("../../Fixtures/user_missing.json");
+            var content = File.ReadAllText("../../../Fixtures/user_missing.json");
             var client = GetMockClient(content, System.Net.HttpStatusCode.NotFound);
             var repo = new UserRepository(client.Object);
             var id = Guid.NewGuid().ToString();
@@ -232,7 +232,7 @@ namespace AssemblyPaymentsDotNet.Tests
         public void EditUserSuccessful()
         {
             //First, create a user we'll work with
-            var content = File.ReadAllText("../../Fixtures/user_create.json");
+            var content = File.ReadAllText("../../../Fixtures/user_create.json");
             var client = GetMockClient(content);
             var repo = new UserRepository(client.Object);
             var id = "608ef7e7-6113-4981-a3a3-ab8cea04eb93";
@@ -256,7 +256,7 @@ namespace AssemblyPaymentsDotNet.Tests
             user["first_name"] = "Test123";
             user["last_name"] = "Test123";
 
-            content = File.ReadAllText("../../Fixtures/user_update.json");
+            content = File.ReadAllText("../../../Fixtures/user_update.json");
             client = GetMockClient(content);
             repo = new UserRepository(client.Object);
             var resp = repo.UpdateUser(user);
@@ -269,7 +269,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void EditUserMissingId()
         {
-            var content = File.ReadAllText("../../Fixtures/user_missing.json");
+            var content = File.ReadAllText("../../../Fixtures/user_missing.json");
             var client = GetMockClient(content, (System.Net.HttpStatusCode)422);
             var repo = new UserRepository(client.Object);
             var id = Guid.NewGuid().ToString();
@@ -301,7 +301,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ListUserItemsSuccessful()
         {
-            var content = File.ReadAllText("../../Fixtures/user_items.json");
+            var content = File.ReadAllText("../../../Fixtures/user_items.json");
             var client = GetMockClient(content);
             var repo = new UserRepository(client.Object);
 
@@ -311,7 +311,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void SetUserDisbursementAccountSuccessful()
         {
-            var content = File.ReadAllText("../../Fixtures/user_set_disbursement_account.json");
+            var content = File.ReadAllText("../../../Fixtures/user_set_disbursement_account.json");
             var client = GetMockClient(content);
             var repo = new UserRepository(client.Object);
 
@@ -326,7 +326,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ListUserBankAccountsSuccessful()
         {
-            var content = File.ReadAllText("../../Fixtures/user_bank_accounts.json");
+            var content = File.ReadAllText("../../../Fixtures/user_bank_accounts.json");
             var client = GetMockClient(content);
             var repo = new UserRepository(client.Object);
 
@@ -338,7 +338,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ListUserWalletAccountsSuccessful()
         {
-            var content = File.ReadAllText("../../Fixtures/user_list_wallet_accounts.json");
+            var content = File.ReadAllText("../../../Fixtures/user_list_wallet_accounts.json");
             var client = GetMockClient(content);
             var repo = new UserRepository(client.Object);
 
@@ -350,7 +350,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void GetUserCardAccountSuccessful()
         {
-            var content = File.ReadAllText("../../Fixtures/user_card_accounts.json");
+            var content = File.ReadAllText("../../../Fixtures/user_card_accounts.json");
             var client = GetMockClient(content);
             var repo = new UserRepository(client.Object);
 
@@ -362,7 +362,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void GetUserPayPalAccountSuccessful()
         {
-            var content = File.ReadAllText("../../Fixtures/user_paypal_accounts.json");
+            var content = File.ReadAllText("../../../Fixtures/user_paypal_accounts.json");
             var client = GetMockClient(content);
             var repo = new UserRepository(client.Object);
 
@@ -374,7 +374,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void GetUserBankAccountEmpty()
         {
-            var content = File.ReadAllText("../../Fixtures/user_bank_accounts_empty.json");
+            var content = File.ReadAllText("../../../Fixtures/user_bank_accounts_empty.json");
             var client = GetMockClient(content, (System.Net.HttpStatusCode)422);
             var repo = new UserRepository(client.Object);
 
@@ -384,7 +384,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void GetUserCardAccountEmpty()
         {
-            var content = File.ReadAllText("../../Fixtures/user_card_accounts_empty.json");
+            var content = File.ReadAllText("../../../Fixtures/user_card_accounts_empty.json");
             var client = GetMockClient(content, (System.Net.HttpStatusCode)422);
             var repo = new UserRepository(client.Object);
 
@@ -394,7 +394,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void GetUserPayPalAccountEmpty()
         {
-            var content = File.ReadAllText("../../Fixtures/user_paypal_accounts_empty.json");
+            var content = File.ReadAllText("../../../Fixtures/user_paypal_accounts_empty.json");
             var client = GetMockClient(content, (System.Net.HttpStatusCode)422);
             var repo = new UserRepository(client.Object);
 

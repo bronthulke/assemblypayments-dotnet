@@ -22,7 +22,7 @@ namespace AssemblyPaymentsDotNet.Tests
         public void ListTransactionsSuccessful()
         {
             //First, create a user, so we'll have at least one 
-            var content = File.ReadAllText("../../Fixtures/transactions_list.json");
+            var content = File.ReadAllText("../../../Fixtures/transactions_list.json");
             var client = GetMockClient(content);
             var repo = new TransactionRepository(client.Object);
             //Then, list users
@@ -50,7 +50,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ShowTransactionWalletAccount() 
         {
-            var content = File.ReadAllText("../../Fixtures/transactions_show_wallet_account.json");
+            var content = File.ReadAllText("../../../Fixtures/transactions_show_wallet_account.json");
             var client = GetMockClient(content);
             var repo = new TransactionRepository(client.Object);
 
@@ -65,7 +65,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ShowTransactionBankAccount()
         {
-            var content = File.ReadAllText("../../Fixtures/transactions_show_bank_account.json");
+            var content = File.ReadAllText("../../../Fixtures/transactions_show_bank_account.json");
             var client = GetMockClient(content);
             var repo = new TransactionRepository(client.Object);
 
@@ -80,7 +80,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ShowTransactionCardAccount()
         {
-            var content = File.ReadAllText("../../Fixtures/transactions_show_card_account.json");
+            var content = File.ReadAllText("../../../Fixtures/transactions_show_card_account.json");
             var client = GetMockClient(content);
             var repo = new TransactionRepository(client.Object);
 
@@ -93,7 +93,7 @@ namespace AssemblyPaymentsDotNet.Tests
         }
 
         [Test]
-        [Ignore]
+        [Ignore(reason: "No fixture yet")]
         public void ShowTransactionPayPalAccount()
         {
             Assert.Fail("No fixture yet!");

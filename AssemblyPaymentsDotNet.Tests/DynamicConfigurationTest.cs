@@ -12,7 +12,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void CreateConfigurationSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/configuration_create.json");
+            var content = File.ReadAllText("../../../Fixtures/configuration_create.json");
             var client = GetMockClient(content);
             var repo = new ConfigurationRepository(client.Object);
             var configuration = new Dictionary<string, object>
@@ -30,7 +30,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void CreateConfigurationMissingName() 
         {
-            var content = File.ReadAllText("../../Fixtures/configuration_create.json");
+            var content = File.ReadAllText("../../../Fixtures/configuration_create.json");
             var client = GetMockClient(content);
             var repo = new ConfigurationRepository(client.Object);
             var configuration = new Dictionary<string, object>
@@ -43,7 +43,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ListConfigurationSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/configuration_list.json");
+            var content = File.ReadAllText("../../../Fixtures/configuration_list.json");
             var client = GetMockClient(content);
 
             var repo = new RestrictionRepository(client.Object);
@@ -56,7 +56,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ShowConfigurationSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/configuration_show.json");
+            var content = File.ReadAllText("../../../Fixtures/configuration_show.json");
             var client = GetMockClient(content);
             var id = "ca321b3f-db87-4d75-ba05-531c7f1bb515";
             var repo = new RestrictionRepository(client.Object);
@@ -69,7 +69,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void UpdateConfigurationSuccessfull()
         {
-            var content = File.ReadAllText("../../Fixtures/configuration_update.json");
+            var content = File.ReadAllText("../../../Fixtures/configuration_update.json");
             var client = GetMockClient(content);
             var repo = new ConfigurationRepository(client.Object);
             var configuration = new Dictionary<string, object>
@@ -88,7 +88,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void UpdateConfigurationMissingName()
         {
-            var content = File.ReadAllText("../../Fixtures/configuration_update.json");
+            var content = File.ReadAllText("../../../Fixtures/configuration_update.json");
             var client = GetMockClient(content);
             var repo = new ConfigurationRepository(client.Object);
             var configuration = new Dictionary<string, object>
@@ -101,7 +101,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void UpdateConfigurationMissingId()
         {
-            var content = File.ReadAllText("../../Fixtures/configuration_update.json");
+            var content = File.ReadAllText("../../../Fixtures/configuration_update.json");
             var client = GetMockClient(content);
             var repo = new ConfigurationRepository(client.Object);
             var configuration = new Dictionary<string, object>
@@ -114,7 +114,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void DeleteConfigurationSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/configuration_delete.json");
+            var content = File.ReadAllText("../../../Fixtures/configuration_delete.json");
             var client = GetMockClient(content);
             var repo = new ConfigurationRepository(client.Object);
             var id = "ca321b3f-db87-4d75-ba05-531c7f1bb515";

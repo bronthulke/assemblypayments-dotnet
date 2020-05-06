@@ -1,7 +1,6 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyPaymentsDotNet", "AssemblyPaymentsDotNet\AssemblyPaymentsDotNet.csproj", "{D7EC61A8-A481-49DA-85AE-280B0A3D08B0}"
 EndProject
@@ -29,5 +28,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79496B7E-C63B-4EA4-8E77-62C39B97066A}
 	EndGlobalSection
 EndGlobal

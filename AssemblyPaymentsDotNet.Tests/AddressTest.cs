@@ -3,6 +3,17 @@ using NUnit.Framework;
 using AssemblyPaymentsDotNet.DTO;
 using AssemblyPaymentsDotNet.Implementations;
 using System.IO;
+using System;
+
+[SetUpFixture]
+public class GlobalSetup
+{
+    [OneTimeSetUp]
+    public void RunBeforeAnyTests()
+    {
+        Environment.CurrentDirectory = TestContext.CurrentContext.TestDirectory;
+    }
+}
 
 namespace AssemblyPaymentsDotNet.Tests
 {
@@ -20,7 +31,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void GetAddressSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/address_get_by_id.json");
+            var content = File.ReadAllText("../../../Fixtures/address_get_by_id.json");
 
             var client = GetMockClient(content);
 

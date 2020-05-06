@@ -19,7 +19,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void RequestPayment() 
         {
-            var content = File.ReadAllText("../../Fixtures/item_actions_request_payment.json");
+            var content = File.ReadAllText("../../../Fixtures/item_actions_request_payment.json");
             var client = GetMockClient(content);
             var repo = new ItemRepository(client.Object);
 
@@ -34,7 +34,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void MakePayment()
         {
-            var content = File.ReadAllText("../../Fixtures/item_actions_make_payment.json");
+            var content = File.ReadAllText("../../../Fixtures/item_actions_make_payment.json");
             var client = GetMockClient(content);
             var repo = new ItemRepository(client.Object);
 
@@ -49,7 +49,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void RequestRelease()
         {
-            var content = File.ReadAllText("../../Fixtures/item_actions_request_release.json");
+            var content = File.ReadAllText("../../../Fixtures/item_actions_request_release.json");
             var client = GetMockClient(content);
             var repo = new ItemRepository(client.Object);
 
@@ -64,7 +64,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ReleasePayment()
         {
-            var content = File.ReadAllText("../../Fixtures/item_actions_release_payment.json");
+            var content = File.ReadAllText("../../../Fixtures/item_actions_release_payment.json");
             var client = GetMockClient(content);
             var repo = new ItemRepository(client.Object);
 
@@ -79,7 +79,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void RequestRefund()
         {
-            var content = File.ReadAllText("../../Fixtures/item_actions_request_refund.json");
+            var content = File.ReadAllText("../../../Fixtures/item_actions_request_refund.json");
             var client = GetMockClient(content);
             var repo = new ItemRepository(client.Object);
 
@@ -94,7 +94,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void Refund()
         {
-            var content = File.ReadAllText("../../Fixtures/item_actions_refund.json");
+            var content = File.ReadAllText("../../../Fixtures/item_actions_refund.json");
             var client = GetMockClient(content);
             var repo = new ItemRepository(client.Object);
 
@@ -110,7 +110,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void DeclineRefund()
         {
-            var content = File.ReadAllText("../../Fixtures/item_actions_request_refund.json");
+            var content = File.ReadAllText("../../../Fixtures/item_actions_request_refund.json");
             var client = GetMockClient(content);
             var repo = new ItemRepository(client.Object);
 
@@ -125,7 +125,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void RaiseDispute()
         {
-            var content = File.ReadAllText("../../Fixtures/item_actions_raise_dispute.json");
+            var content = File.ReadAllText("../../../Fixtures/item_actions_raise_dispute.json");
             var client = GetMockClient(content);
             var repo = new ItemRepository(client.Object);
 
@@ -140,7 +140,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void RequestDisputeResolution()
         {
-            var content = File.ReadAllText("../../Fixtures/item_actions_request_dispute_resolution.json");
+            var content = File.ReadAllText("../../../Fixtures/item_actions_request_dispute_resolution.json");
             var client = GetMockClient(content);
             var repo = new ItemRepository(client.Object);
 
@@ -155,7 +155,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ResolveDispute()
         {
-            var content = File.ReadAllText("../../Fixtures/item_actions_resolve_dispute.json");
+            var content = File.ReadAllText("../../../Fixtures/item_actions_resolve_dispute.json");
             var client = GetMockClient(content);
             var repo = new ItemRepository(client.Object);
 
@@ -170,7 +170,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void EscalateDispute()
         {
-            var content = File.ReadAllText("../../Fixtures/item_actions_escalate_dispute.json");
+            var content = File.ReadAllText("../../../Fixtures/item_actions_escalate_dispute.json");
             var client = GetMockClient(content);
             var repo = new ItemRepository(client.Object);
 
@@ -185,7 +185,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void AcknowledgeWireTransfer()
         {
-            var content = File.ReadAllText("../../Fixtures/item_actions_acknowledge_wire_transfer.json");
+            var content = File.ReadAllText("../../../Fixtures/item_actions_acknowledge_wire_transfer.json");
             var client = GetMockClient(content);
             var repo = new ItemRepository(client.Object);
 
@@ -200,7 +200,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void RevertWireTransfer()
         {
-            var content = File.ReadAllText("../../Fixtures/item_actions_revert_wire_transfer.json");
+            var content = File.ReadAllText("../../../Fixtures/item_actions_revert_wire_transfer.json");
             var client = GetMockClient(content);
             var repo = new ItemRepository(client.Object);
 
@@ -215,7 +215,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void Cancel()
         {
-            var content = File.ReadAllText("../../Fixtures/item_actions_cancel.json");
+            var content = File.ReadAllText("../../../Fixtures/item_actions_cancel.json");
             var client = GetMockClient(content);
             var repo = new ItemRepository(client.Object);
 
@@ -230,7 +230,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void SendTaxInvoice()
         {
-            var content = File.ReadAllText("../../Fixtures/item_actions_send_tax_invoice.json");
+            var content = File.ReadAllText("../../../Fixtures/item_actions_send_tax_invoice.json");
             var client = GetMockClient(content);
             var repo = new ItemRepository(client.Object);
 
@@ -245,7 +245,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void RequestTaxInvoice()
         {
-            var content = File.ReadAllText("../../Fixtures/item_actions_request_tax_invoice.json");
+            var content = File.ReadAllText("../../../Fixtures/item_actions_request_tax_invoice.json");
             var client = GetMockClient(content);
             var repo = new ItemRepository(client.Object);
 

@@ -14,7 +14,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ListChargesSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/charges_list.json");
+            var content = File.ReadAllText("../../../Fixtures/charges_list.json");
             var client = GetMockClient(content);
 
             var repo = new ChargeRepository(client.Object);
@@ -27,7 +27,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void CreateChargeSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/charges_create.json");
+            var content = File.ReadAllText("../../../Fixtures/charges_create.json");
             var client = GetMockClient(content);
 
             var repo = new ChargeRepository(client.Object);
@@ -62,7 +62,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ShowChargeSuccessful()
         {
-            var content = File.ReadAllText("../../Fixtures/charges_show.json");
+            var content = File.ReadAllText("../../../Fixtures/charges_show.json");
             var client = GetMockClient(content);
             var repo = new ChargeRepository(client.Object);
             var id = "cb7eafc1-571c-425c-9adc-f56cb585cd68";
@@ -77,7 +77,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ShowChargeBuyerSuccessful()
         {
-            var content = File.ReadAllText("../../Fixtures/charges_show_buyer.json");
+            var content = File.ReadAllText("../../../Fixtures/charges_show_buyer.json");
             var client = GetMockClient(content);
             var repo = new ChargeRepository(client.Object);
             var id = "cb7eafc1-571c-425c-9adc-f56cb585cd68";
@@ -93,7 +93,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ShowChargeBuyerStatus()
         {
-            var content = File.ReadAllText("../../Fixtures/charges_show_status.json");
+            var content = File.ReadAllText("../../../Fixtures/charges_show_status.json");
             var client = GetMockClient(content);
             var repo = new ChargeRepository(client.Object);
             var id = "cb7eafc1-571c-425c-9adc-f56cb585cd68";

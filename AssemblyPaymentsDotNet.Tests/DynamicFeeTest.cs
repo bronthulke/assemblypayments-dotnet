@@ -24,7 +24,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void CreateFeeSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/fees_create.json");
+            var content = File.ReadAllText("../../../Fixtures/fees_create.json");
             var client = GetMockClient(content);
 
             var repo = new FeeRepository(client.Object);
@@ -64,7 +64,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void GetFeeByIdSuccessfull()
         {
-            var content = File.ReadAllText("../../Fixtures/fees_get_by_id.json");
+            var content = File.ReadAllText("../../../Fixtures/fees_get_by_id.json");
             var client = GetMockClient(content);
 
             var repo = new FeeRepository(client.Object);
@@ -78,7 +78,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ListFeeSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/fees_list.json");
+            var content = File.ReadAllText("../../../Fixtures/fees_list.json");
             var client = GetMockClient(content);
 
             var repo = new FeeRepository(client.Object);

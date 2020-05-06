@@ -12,7 +12,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ListTest() 
         {
-            var content = File.ReadAllText("../../Fixtures/batch_list.json");
+            var content = File.ReadAllText("../../../Fixtures/batch_list.json");
 
             var client = GetMockClient(content);
             var repo = new BatchTransactionRepository(client.Object);
@@ -27,7 +27,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ShowTest()
         {
-            var content = File.ReadAllText("../../Fixtures/batch_show.json");
+            var content = File.ReadAllText("../../../Fixtures/batch_show.json");
 
             var client = GetMockClient(content);
             var repo = new BatchTransactionRepository(client.Object);

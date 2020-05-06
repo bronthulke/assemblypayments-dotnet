@@ -11,7 +11,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ShowSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/marketplaces_show.json");
+            var content = File.ReadAllText("../../../Fixtures/marketplaces_show.json");
             var client = GetMockClient(content);
 
             var repo = new MarketplaceRepository(client.Object);

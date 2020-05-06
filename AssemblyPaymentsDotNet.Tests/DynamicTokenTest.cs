@@ -51,7 +51,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void GenerateCardToken()
         {
-            var content = File.ReadAllText("../../Fixtures/generate_card_token.json");
+            var content = File.ReadAllText("../../../Fixtures/generate_card_token.json");
 
             var client = GetMockClient(content);
             var repo = new TokenRepository(client.Object);

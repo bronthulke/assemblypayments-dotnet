@@ -22,7 +22,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ListCompaniesSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/companies_list.json");
+            var content = File.ReadAllText("../../../Fixtures/companies_list.json");
 
             var client = GetMockClient(content);
             var repo = new CompanyRepository(client.Object);
@@ -36,7 +36,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void GetCompanyByIdSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/companies_get_by_id.json");
+            var content = File.ReadAllText("../../../Fixtures/companies_get_by_id.json");
 
             var client = GetMockClient(content);
             var repo = new CompanyRepository(client.Object);
@@ -52,7 +52,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void CreateCompanySuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/companies_create.json");
+            var content = File.ReadAllText("../../../Fixtures/companies_create.json");
 
             var client = GetMockClient(content);
             var repo = new CompanyRepository(client.Object);
@@ -80,7 +80,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void EditCompanySuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/companies_edit.json");
+            var content = File.ReadAllText("../../../Fixtures/companies_edit.json");
 
             var client = GetMockClient(content);
             var repo = new CompanyRepository(client.Object);

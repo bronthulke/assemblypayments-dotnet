@@ -12,7 +12,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void CreateSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/direct_debit_authorities_create.json");
+            var content = File.ReadAllText("../../../Fixtures/direct_debit_authorities_create.json");
 
             var client = GetMockClient(content);
             var repo = new DirectDebitAuthorityRepository(client.Object);
@@ -26,7 +26,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ListSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/direct_debit_authorities_list.json");
+            var content = File.ReadAllText("../../../Fixtures/direct_debit_authorities_list.json");
 
             var client = GetMockClient(content);
             var repo = new DirectDebitAuthorityRepository(client.Object);
@@ -40,7 +40,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void ShowSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/direct_debit_authorities_show.json");
+            var content = File.ReadAllText("../../../Fixtures/direct_debit_authorities_show.json");
 
             var client = GetMockClient(content);
             var repo = new DirectDebitAuthorityRepository(client.Object);
@@ -54,7 +54,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void DeleteSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/direct_debit_authorities_delete.json");
+            var content = File.ReadAllText("../../../Fixtures/direct_debit_authorities_delete.json");
 
             var client = GetMockClient(content);
             var repo = new DirectDebitAuthorityRepository(client.Object);

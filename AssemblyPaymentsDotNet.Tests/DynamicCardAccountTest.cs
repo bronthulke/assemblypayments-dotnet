@@ -25,7 +25,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void CreateCardAccountSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/card_account_create.json");
+            var content = File.ReadAllText("../../../Fixtures/card_account_create.json");
 
             var client = GetMockClient(content);
             var repo = new CardAccountRepository(client.Object);
@@ -60,7 +60,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void GetCardAccountSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/card_account_get_by_id.json");
+            var content = File.ReadAllText("../../../Fixtures/card_account_get_by_id.json");
 
             var client = GetMockClient(content);
             var repo = new CardAccountRepository(client.Object);
@@ -83,7 +83,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void GetUserForCardAccountSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/card_account_get_users.json");
+            var content = File.ReadAllText("../../../Fixtures/card_account_get_users.json");
 
             var client = GetMockClient(content);
             var repo = new CardAccountRepository(client.Object);
@@ -102,7 +102,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Test]
         public void DeleteCardAccountSuccessfully()
         {
-            var content = File.ReadAllText("../../Fixtures/card_account_delete.json");
+            var content = File.ReadAllText("../../../Fixtures/card_account_delete.json");
 
             var client = GetMockClient(content);
             var repo = new CardAccountRepository(client.Object);
