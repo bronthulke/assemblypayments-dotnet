@@ -1,7 +1,8 @@
-using Microsoft.Practices.Unity;
 using AssemblyPaymentsDotNet.Implementations;
 using AssemblyPaymentsDotNet.Interfaces;
 using RestSharp;
+using Unity;
+using Unity.Injection;
 
 namespace AssemblyPaymentsDotNet.DI
 {

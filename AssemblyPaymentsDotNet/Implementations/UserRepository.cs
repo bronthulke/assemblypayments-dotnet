@@ -61,9 +61,15 @@ namespace AssemblyPaymentsDotNet.Implementations
             request.AddParameter("city", user.City);
             request.AddParameter("zip", user.Zip);
             request.AddParameter("country", user.Country);
-
-            request.AddParameter("drivers_license", user.DriversLicense);
+            request.AddParameter("dob", user.Dob);
+            request.AddParameter("drivers_license_number", user.DriversLicenseNumber);
+            request.AddParameter("drivers_license_state", user.DriversLicenseState);
             request.AddParameter("government_number", user.GovernmentNumber);
+            request.AddParameter("ip_address", user.IPAddress);
+            request.AddParameter("logo_url", user.LogoUrl);
+            request.AddParameter("color_1", user.Color1);
+            request.AddParameter("color_2", user.Color2);
+
 
             var response = SendRequest(Client, request);
             return JsonConvert.DeserializeObject<IDictionary<string,User>>(response.Content).Values.First();
@@ -221,9 +227,15 @@ namespace AssemblyPaymentsDotNet.Implementations
             request.AddParameter("city", user.City);
             request.AddParameter("zip", user.Zip);
             request.AddParameter("country", user.Country);
-
-            request.AddParameter("drivers_license", user.DriversLicense);
+            request.AddParameter("dob", user.Dob);
+            request.AddParameter("drivers_license_number", user.DriversLicenseNumber);
+            request.AddParameter("drivers_license_state", user.DriversLicenseState);
             request.AddParameter("government_number", user.GovernmentNumber);
+            request.AddParameter("ip_address", user.IPAddress);
+            request.AddParameter("logo_url", user.LogoUrl);
+            request.AddParameter("color_1", user.Color1);
+            request.AddParameter("color_2", user.Color2);
+
 
             var response = SendRequest(Client, request);
             return JsonConvert.DeserializeObject<IDictionary<string, User>>(response.Content).Values.First();

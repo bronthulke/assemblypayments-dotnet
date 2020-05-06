@@ -1,7 +1,7 @@
-using Microsoft.Practices.Unity;
 using NUnit.Framework;
 using AssemblyPaymentsDotNet.DI;
 using AssemblyPaymentsDotNet.Interfaces;
+using Unity;
 
 namespace AssemblyPaymentsDotNet.Tests
 {

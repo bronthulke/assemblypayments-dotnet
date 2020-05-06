@@ -8,7 +8,7 @@
     <PackageReference Include="log4net" Version="2.0.5" />
     <PackageReference Include="Newtonsoft.Json" Version="8.0.1" />
     <PackageReference Include="RestSharp" Version="105.2.3" />
-    <PackageReference Include="Unity" Version="4.0.1" />
+    <PackageReference Include="Unity" Version="5.11.6" />
 
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

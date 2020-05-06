@@ -45,8 +45,26 @@ namespace AssemblyPaymentsDotNet.DTO
 
         [JsonProperty(PropertyName = "drivers_license")]
         public string DriversLicense { get; set; }
-        
+
+        [JsonProperty(PropertyName = "drivers_license_number")]
+        public string DriversLicenseNumber { get; set; }
+
+        [JsonProperty(PropertyName = "drivers_license_state")]
+        public string DriversLicenseState { get; set; }
+
         [JsonProperty(PropertyName = "government_number")]
         public string GovernmentNumber { get; set; }
+
+        [JsonProperty(PropertyName = "ip_address")]
+        public string IPAddress { get; set; }
+
+        [JsonProperty(PropertyName = "logo_url")]
+        public string LogoUrl { get; set; }
+
+        [JsonProperty(PropertyName = "color_1")]
+        public string Color1 { get; set; }
+
+        [JsonProperty(PropertyName = "color_2")]
+        public string Color2{ get; set; }
     }
 }
