@@ -1,0 +1,4 @@
+﻿This command should be run in Nuget Console
+
+
+nuget pack AssemblyPaymentsDotNet\AssemblyPaymentsDotNet.csproj -Prop Configuration=Release

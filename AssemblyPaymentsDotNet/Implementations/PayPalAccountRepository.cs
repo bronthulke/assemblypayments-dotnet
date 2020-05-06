@@ -1,0 +1,67 @@
+using Newtonsoft.Json;
+using AssemblyPaymentsDotNet.DTO;
+using AssemblyPaymentsDotNet.Interfaces;
+using RestSharp;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+
+namespace AssemblyPaymentsDotNet.Implementations
+{
+    public class PayPalAccountRepository : AbstractRepository, IPayPalAccountRepository
+    {
+        public PayPalAccountRepository(IRestClient client) : base(client)
+        {
+        }
+
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+        public PayPalAccount GetPayPalAccountById(string paypalAccountId)
+        {
+            AssertIdNotNull(paypalAccountId);
+            var request = new RestRequest("/paypal_accounts/{id}", Method.GET);
+            request.AddUrlSegment("id", paypalAccountId);
+            var response = SendRequest(Client, request);
+            return JsonConvert.DeserializeObject<IDictionary<string, PayPalAccount>>(response.Content).Values.First();
+        }
+
+        public PayPalAccount CreatePayPalAccount(PayPalAccount paypalAccount)
+        {
+            var request = new RestRequest("/paypal_accounts", Method.POST);
+            request.AddParameter("user_id", paypalAccount.UserId);
+            request.AddParameter("paypal_email", paypalAccount.PayPal.Email);
+
+            var response = SendRequest(Client, request);
+            return JsonConvert.DeserializeObject<IDictionary<string, PayPalAccount>>(response.Content).Values.First();
+        }
+
+        public bool DeletePayPalAccount(string paypalAccountId)
+        {
+            AssertIdNotNull(paypalAccountId);
+            var request = new RestRequest("/paypal_accounts/{id}", Method.DELETE);
+            request.AddUrlSegment("id", paypalAccountId);
+            var response = SendRequest(Client, request);
+            if (response.StatusCode == HttpStatusCode.NotFound)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public User GetUserForPayPalAccount(string paypalAccountId)
+        {
+            AssertIdNotNull(paypalAccountId);
+            var request = new RestRequest("/paypal_accounts/{id}/users", Method.GET);
+            request.AddUrlSegment("id", paypalAccountId);
+            var response = SendRequest(Client, request);
+
+            var dict = JsonConvert.DeserializeObject<IDictionary<string, object>>(response.Content);
+            if (dict.ContainsKey("users"))
+            {
+                var item = dict["users"];
+                return JsonConvert.DeserializeObject<User>(JsonConvert.SerializeObject(item));
+            }
+            return null;
+        }
+    }
+}

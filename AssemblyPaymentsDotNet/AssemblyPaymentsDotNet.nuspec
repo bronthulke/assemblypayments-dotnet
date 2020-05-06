@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>AssemblyPayments.API.NET</id>
+    <version>1.1.3</version>
+    <title>Assembly Payments API</title>
+    <authors>Assembly Payments</authors>
+    <owners>Adam Atawneh</owners>
+    <projectUrl>https://github.com/AssemblyPayments/assemblypayments-dotnet</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package provides an easy way to use Assembly Payments API</description>
+    <releaseNotes>Initial release of the package</releaseNotes>
+    <copyright>Copyright 2020</copyright>
+    <dependencies>
+      <dependency id="log4net" version="2.0.3" />
+      <dependency id="Newtonsoft.Json" version="6.0.8" />
+      <dependency id="RestSharp" version="105.1.0" />
+      <dependency id="Unity" version="3.5.1404.0" />
+    </dependencies>
+  </metadata>
+</package>
