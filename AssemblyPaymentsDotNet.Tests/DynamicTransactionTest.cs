@@ -96,7 +96,7 @@ namespace AssemblyPaymentsDotNet.Tests
         [Ignore(reason: "No fixture yet")]
         public void ShowTransactionPayPalAccount()
         {
-            Assert.Fail("No fixture yet!");
+            Assert.Fail("No fixture yet");
         }
     }
 }

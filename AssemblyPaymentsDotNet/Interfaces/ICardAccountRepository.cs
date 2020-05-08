@@ -13,5 +13,6 @@ namespace AssemblyPaymentsDotNet.Interfaces
 
         User GetUserForCardAccount(string cardAccountId);
 
+        CardAccount VerifyCard(string cardId);
     }
 }

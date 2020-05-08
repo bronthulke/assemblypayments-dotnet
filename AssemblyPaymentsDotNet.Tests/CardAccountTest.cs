@@ -101,5 +101,22 @@ namespace AssemblyPaymentsDotNet.Tests
             Assert.IsTrue(result);
         }
 
+        [Test]
+        public void VerifyCardSuccessfully()
+        {
+            var content = File.ReadAllText("../../../Fixtures/card_account_verify_card.json");
+
+            var client = GetMockClient(content);
+            var repo = new CardAccountRepository(client.Object);
+            
+            const string id = "25d34744-8ef0-46a4-8b18-2a8322933cd1"; //some card created before
+            
+            var verifyCardResult = repo.VerifyCard(id);
+            client.VerifyAll();
+            Assert.IsNotNull(verifyCardResult);
+            Assert.IsNotNull(verifyCardResult.Id);
+            Assert.AreEqual("verified", verifyCardResult.VerificationStatus);
+        }
+
     }
 }

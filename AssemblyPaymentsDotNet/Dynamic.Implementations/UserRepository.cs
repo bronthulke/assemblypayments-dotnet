@@ -55,6 +55,8 @@ namespace AssemblyPaymentsDotNet.Dynamic.Implementations
 
         public bool DeleteUser(string userId)
         {
+            throw new NotImplementedException();
+
             AssertIdNotNull(userId);
             var request = new RestRequest("/users/{id}", Method.DELETE);
             request.AddUrlSegment("id", userId);
@@ -182,19 +184,19 @@ namespace AssemblyPaymentsDotNet.Dynamic.Implementations
         {
             if ((!user.ContainsKey("id")) || String.IsNullOrEmpty((string)user["id"]))
             {
-                throw new ValidationException("Field User.ID should not be empty!");
+                throw new ValidationException("Field User.ID should not be empty");
             }
             if ((!user.ContainsKey("first_name")) || String.IsNullOrEmpty((string)user["first_name"]))
             {
-                throw new ValidationException("Field User.FirstName should not be empty!");
+                throw new ValidationException("Field User.FirstName should not be empty");
             }
             if ((!user.ContainsKey("country")) || !IsCorrectCountryCode((string)user["country"]))
             {
-                throw new ValidationException("Field User.Country should contain 3-letter ISO country code!");
+                throw new ValidationException("Field User.Country should contain 3-letter ISO country code");
             }
             if ((!user.ContainsKey("email")) || !IsCorrectEmail((string)user["email"]))
             {
-                throw new ValidationException("Field User.Email should contain correct email address!");
+                throw new ValidationException("Field User.Email should contain a valid email address");
             }
         }
         #endregion

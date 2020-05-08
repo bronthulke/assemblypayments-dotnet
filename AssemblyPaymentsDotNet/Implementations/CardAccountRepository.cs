@@ -5,6 +5,8 @@ using RestSharp;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System;
+using AssemblyPaymentsDotNet.Exceptions;
 
 namespace AssemblyPaymentsDotNet.Implementations
 {
@@ -15,6 +17,8 @@ namespace AssemblyPaymentsDotNet.Implementations
         }
 
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+        #region public methods
 
         public CardAccount GetCardAccountById(string cardAccountId)
         {
@@ -27,8 +31,11 @@ namespace AssemblyPaymentsDotNet.Implementations
 
         public CardAccount CreateCardAccount(CardAccount cardAccount)
         {
+            ValidateCreateCardAccount(cardAccount);
+
             var request = new RestRequest("/card_accounts", Method.POST);
             request.AddParameter("user_id", cardAccount.UserId);
+            request.AddParameter("currency", cardAccount.Currency);
             request.AddParameter("full_name", cardAccount.Card.FullName);
             request.AddParameter("number", cardAccount.Card.Number);
             request.AddParameter("expiry_month", cardAccount.Card.ExpiryMonth);
@@ -67,5 +74,31 @@ namespace AssemblyPaymentsDotNet.Implementations
             }
             return null;
         }
+
+        public CardAccount VerifyCard(string cardId)
+        {
+            AssertIdNotNull(cardId);
+
+            var request = new RestRequest("/card_accounts/{id}/verify", Method.PATCH);
+            request.AddUrlSegment("id", cardId);
+
+            var response = SendRequest(Client, request);
+            return JsonConvert.DeserializeObject<IDictionary<string, CardAccount>>(response.Content).Values.First();
+        }
+
+
+        #endregion
+
+        #region private methods
+
+        private void ValidateCreateCardAccount(CardAccount cardAccount)
+        {
+            if (String.IsNullOrEmpty(cardAccount.UserId))
+            {
+                throw new ValidationException("Field UserId should not be empty");
+            }
+        }
+
+        #endregion
     }
 }

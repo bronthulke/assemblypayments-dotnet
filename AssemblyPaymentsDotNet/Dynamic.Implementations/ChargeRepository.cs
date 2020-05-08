@@ -72,11 +72,11 @@ namespace AssemblyPaymentsDotNet.Dynamic.Implementations
         {
             if ((!charge.ContainsKey("country")) || !IsCorrectCountryCode((string)charge["country"]))
             {
-                throw new ValidationException("Field charge.Country should contain 3-letter ISO country code!");
+                throw new ValidationException("Field charge.Country should contain 3-letter ISO country code");
             }
             if ((!charge.ContainsKey("email")) || !IsCorrectEmail((string)charge["email"]))
             {
-                throw new ValidationException("Field charge.Email should contain correct email address!");
+                throw new ValidationException("Field charge.Email should contain correct email address");
             }
         }
         #endregion

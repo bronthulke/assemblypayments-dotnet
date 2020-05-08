@@ -12,5 +12,8 @@ namespace AssemblyPaymentsDotNet.DTO
 
         [JsonIgnore]
         public string UserId { get; set; }
+
+        [JsonProperty(PropertyName = "verification_status")]
+        public string VerificationStatus { get; set; }
     }
 }

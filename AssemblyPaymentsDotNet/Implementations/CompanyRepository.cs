@@ -43,7 +43,7 @@ namespace AssemblyPaymentsDotNet.Implementations
         {
             AssertIdNotNull(userId);
             if (!IsCorrectCountryCode(company.Country)) {
-                throw new ValidationException("Field country should contain 3-letter ISO country code!");
+                throw new ValidationException("Field country should contain 3-letter ISO country code");
             }
             var request = new RestRequest("/companies", Method.POST);
             request.AddParameter("name", company.Name);

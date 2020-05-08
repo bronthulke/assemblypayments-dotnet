@@ -129,8 +129,8 @@ namespace AssemblyPaymentsDotNet.Implementations
         {
             if (string.IsNullOrEmpty(itemId))
             {
-                log.Error("id cannot be empty!");
-                throw new ArgumentException("id cannot be empty!");
+                log.Error("id cannot be empty");
+                throw new ArgumentException("Id cannot be empty");
             }
         }
 
@@ -138,13 +138,13 @@ namespace AssemblyPaymentsDotNet.Implementations
         {
             if (limit < 0 || offset < 0)
             {
-                log.Error("limit and offset values should be nonnegative!");
-                throw new ArgumentException("limit and offset values should be nonnegative!");
+                log.Error("Limit and offset values should be nonnegative");
+                throw new ArgumentException("Limit and offset values should be nonnegative");
             }
 
             if (limit > EntityListLimit)
             {
-                var message = String.Format("Max value for limit parameter is {0}!", EntityListLimit);
+                var message = String.Format("Max value for limit parameter is {0}", EntityListLimit);
                 log.Error(message);
                 throw new ArgumentException(message);
             }
