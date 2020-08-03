@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace AssemblyPaymentsDotNet.DTO
 {
@@ -15,6 +16,9 @@ namespace AssemblyPaymentsDotNet.DTO
 
         [JsonProperty(PropertyName = "mobile")]
         public string Mobile { get; set; }
+
+        [JsonProperty(PropertyName = "phone")]
+        public string Phone { get; set; }
 
         [JsonProperty(PropertyName = "address_line1")]
         public string AddressLine1 { get; set; }
@@ -65,6 +69,21 @@ namespace AssemblyPaymentsDotNet.DTO
         public string Color1 { get; set; }
 
         [JsonProperty(PropertyName = "color_2")]
-        public string Color2{ get; set; }
+        public string Color2 { get; set; }
+
+        [JsonProperty(PropertyName = "custom_descriptor")]
+        public string CustomDescriptor { get; set; }
+
+        [JsonProperty(PropertyName = "location")]
+        public string Location { get; set; }
+
+        [JsonProperty(PropertyName = "held_state")]
+        public bool HeldState { get; set; }
+
+        [JsonProperty(PropertyName = "related")]
+        public IDictionary<string, string> Related { get; set; }
+
+        [JsonProperty(PropertyName = "roles")]
+        public string[] Roles{ get; set; }
     }
 }

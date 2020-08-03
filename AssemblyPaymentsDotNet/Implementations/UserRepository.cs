@@ -69,6 +69,7 @@ namespace AssemblyPaymentsDotNet.Implementations
             request.AddParameter("logo_url", user.LogoUrl);
             request.AddParameter("color_1", user.Color1);
             request.AddParameter("color_2", user.Color2);
+            request.AddParameter("custom_descriptor", user.CustomDescriptor);
 
 
             var response = SendRequest(Client, request);
